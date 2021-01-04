@@ -1,0 +1,111 @@
+.homepage #catAbb,
+.homepage #go,
+.homepage .leftlinks #cl_app_beta,
+.no-js,
+p.more {
+  display: none;
+}
+
+#logo {
+  font-size: 2.5rem;
+}
+
+.homepage-search .querybox {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 2px solid #464646;
+  font-size: 16px;
+}
+
+.menu.collapsible > li {
+  cursor: pointer;
+}
+
+.menu.collapsible > li.expand.s ul {
+  display: block;
+}
+
+.menu.collapsible > li ul {
+  display: none;
+}
+
+/* Write your CSS here. */
+
+body{
+  font-family:Helvetica, sans-serif;
+  background-color: #F5F5F5;
+  color: #464646;
+}
+
+a{
+  text-decoration: none;
+}
+
+ul{
+  padding: 0px;
+}
+
+li{
+  list-style: none;
+}
+
+a:hover{
+  color: #800080;
+  font-weight: bold;
+}
+
+.page-container{
+  max-width: 1200px;
+}
+
+#leftbar{
+  float: left;
+  padding: 0px 30px;
+  box-sizing: border-box;
+  width: 25%;
+}
+
+#center{
+  float: left;
+  padding: 0px 30px;
+  box-sizing: border-box;
+  width: 50%;
+  border: solid 1px #464646;
+  border-radius: 10px;
+}
+
+#rightbar{
+  float: left;
+  padding: 0px 30px;
+  box-sizing: border-box;
+  width: 25%;
+}
+
+footer{
+  clear: both;
+}
+
+#center > div {
+  float: left;
+  width: 33%;
+}
+
+#topban h2{
+  text-align: center;
+}
+
+ul.clfooter{
+  text-align: center;
+  padding: 10px 0px ;
+  border-top: 1px solid gray;
+}
+
+ul > li{
+  display: inline;
+  padding-right: 5px;
+}
+
+.ban::before{
+  content: "☮️ ";
+}

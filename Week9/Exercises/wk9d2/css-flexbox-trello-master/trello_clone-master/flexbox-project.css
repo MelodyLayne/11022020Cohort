@@ -1,0 +1,107 @@
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'sans-serif';
+  font-size: 14px;
+  margin: 0px;
+}
+
+.header-nav__container {
+  background-color: #026aa7;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 4px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-nav__group {
+  display: flex;
+  margin: 5px;
+}
+
+.header-nav__button#alerts {
+  background-color: #cf513d;
+}
+
+@media screen and (max-width: 730px) {
+  .header-nav__button#search>input {
+    display: none;
+  }
+
+  .header-nav__button>.boards-label {
+    display: none;
+  }
+}
+
+.team__container {
+  background-color: #F4F5F7;
+  padding: 32px;
+}
+
+.team__info {
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 650px;
+  text-align: center;
+}
+
+.team__info > h1 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 28px;
+  margin: 0 0 12px
+}
+
+.team__info > a {
+  color: #172b4d;
+  line-height: 20px;
+  font-weight: normal;
+}
+
+/* Supplied CSS follows. */
+
+.header-nav__button {
+  display: inline;
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  align-items: center;
+  text-align: center;
+  background-color: hsla(0, 0%, 100%, .3);
+  box-shadow: none;
+  color: #fff;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 4px 0 0;
+  padding: 0;
+  transition: .1s ease;
+  white-space: nowrap;
+  padding: 8px;
+  height: 32px;
+  width: 32px;
+}
+
+.header-nav__button#search>input {
+  border-style: none;
+  border: none;
+  background-image: none;
+  background-color: transparent;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.header-nav__button>.boards-label {
+  font-weight: 700;
+  padding-left: 4px;
+}
+
+.header-nav__trello-logo {
+  opacity: 0.5;
+  display: block;
+  left: 50%;
+  position: center;
+  transform: translateX(-50%);
+  top: 5px;
+}

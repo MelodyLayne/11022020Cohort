@@ -1,0 +1,62 @@
+body {
+    font-family: Arial;
+}
+
+div.red-rectangle {
+    box-sizing: border-box;
+    height: 25px;
+    width: 50px;
+    background-color: #ff9999;
+    border: 3px solid #FF0000;
+}
+
+.outer-layer-3 > .black-box {
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+}
+
+.outer-layer-3 > .yellow-box {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    background-color: yellow;
+    margin: -35px 5px;
+    position: absolute;
+}
+
+.outer-layer-4 {
+    display: inline-flex;
+    align-items: center;
+}
+
+.outer-layer-5 > p {
+    text-transform: uppercase;
+}
+
+.inner-layer-6 {
+    display: grid;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 3;
+
+}
+
+.outer-layer-7 {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.outer-layer-8 {
+    overflow: hidden;
+}
+
+.outer-layer-9 a {
+    display: inline-block;
+    padding: 4px;
+    margin: 4px 8px;
+}
+
+.box-10.purple-10 {
+    border: 3px solid yellow;
+}

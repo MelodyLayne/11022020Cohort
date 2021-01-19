@@ -1,0 +1,19 @@
+{
+  "development": {
+    "username": "app_academy",
+    "password": "password",
+    "database": "invoice_sequelize_app_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize"
+  },
+  "test": {
+    "username": "app_academy",
+    "password": "password",
+    "database": "invoice_sequelize_app_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "seederStorage": "sequelize",
+    "logging": false
+  }
+}

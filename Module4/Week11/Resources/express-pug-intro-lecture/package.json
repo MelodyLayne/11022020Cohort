@@ -1,0 +1,22 @@
+{
+  "name": "express-pug-intro-lecture",
+  "version": "1.0.0",
+  "description": "Intro to Express and Pug",
+  "main": "intro-to-express.js",
+  "scripts": {
+    "intro-to-express": "node intro-to-express.js",
+    "rendering-pug": "node rendering-pug.js",
+    "exploring-1": "nodemon exploring-route-paths-1.js",
+    "exploring-2": "nodemon exploring-route-paths-2.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}

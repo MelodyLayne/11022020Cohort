@@ -14,8 +14,12 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/create",csrfProtection, async (req, res) => {
-  res.render("create");
+app.get("/create",csrfProtection, async (req, res, next) => {
+  res.render("create", {
+    title: "Create a User",
+    messages: [],
+    csrfToken: req.csrfToken()
+  });
 });
 
 app.get("/create-interesting",csrfProtection, async (req, res) => {
@@ -23,7 +27,7 @@ app.get("/create-interesting",csrfProtection, async (req, res) => {
 });
 
 const userValidation= (req,res, next) => {
-  const {firstName, lastName, email, password, confirmedPassword} = req.body;
+  const {firstName, lastName, email, password} = req.body;
 
   const errors = [];
   if (!firstName){
@@ -45,7 +49,7 @@ const userValidation= (req,res, next) => {
 
 }
 
-app.post("/create",csrfProtection, userValidation, (req, res) => {
+app.post("/create", csrfProtection, userValidation, (req, res) => {
   const {firstName, lastName, email, password, confirmedPassword} = req.body;
 
   if (req.errors.length > 0){
@@ -54,11 +58,11 @@ app.post("/create",csrfProtection, userValidation, (req, res) => {
       firstName,
       lastName,
       email,
-      password
+      csrfToken: req.csrfToken();
     })
     return;
   }
-  
+
 })
 
 const users = [

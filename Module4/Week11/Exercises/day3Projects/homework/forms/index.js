@@ -1,9 +1,13 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
+const csrf = require('csurf');
 const app = express();
 app.set('view engine', 'pug');
+app.use(cookieParser())
 app.use(express.urlencoded());
 const guests = [];
 const port = 8081;
+const csrfProtection = csrf({ cookie: true });
 
 const validateGuest = (req, res, next) => {
     const { fullName, email, numGuests } = req.body;
@@ -31,15 +35,15 @@ const validateGuest = (req, res, next) => {
 	}
 };
 
-app.get('/', (req, res) => {
+app.get('/',  (req, res) => {
 	res.render('index', { title: 'Guest List', guests });
 });
 
-app.get('/guest', (req, res) => {
-	res.render('guest-form', { title: 'Guest Form' });
+app.get('/guest-form', csrfProtection, (req, res) => {
+	res.render('guest-form', { title: 'Guest Form', csrfToken: req.csrfToken });
 });
 
-app.post('/guest', validateGuest, (req, res) => {
+app.post('/guest', csrfProtection, validateGuest, (req, res) => {
 	if (errors.length > 0) {
 		res.render('guest-form', {
 			title: 'Guest Form',
@@ -51,9 +55,9 @@ app.post('/guest', validateGuest, (req, res) => {
 		return;
 	}
 	const guest = {
-		fullname: req.body.fullname,
-		email: req.body.email,
-		numGuest: numGuestsNum
+		fullname,
+		email,
+		numGuests
 	};
 	guests.push(guest);
 	res.redirect('/');

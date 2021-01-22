@@ -1,0 +1,20 @@
+extends layout
+block content
+  if errors
+    div
+      ul
+        each error in errors
+          li #{error}
+  form(method='post' action='/create')
+    input(type='hidden', name='_csrf', value=csrfToken)
+    input(type='text', name='firstName', placeholder='Name', required)
+    label(for='firstName') First Name
+    input(type='text', name='lastName', placeholder='Last Name', required)
+    label(for='lastName') Last Name
+    input(type='email' name='email' placeholder='email' required)
+    label(for='email') Email
+    input(type='password' name='password' placeholder='password' required)
+    label(for='password') Password
+    input(type='password' name='confirmedPassword' placeholder='confirmedPassword' required)
+    label(for='confirmedPassword') Confirmed Password
+    input(type='submit' value='Create User')

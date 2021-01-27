@@ -1,0 +1,20 @@
+form(method="post" action="/entrees")
+  h1 Create a new entree
+
+  input(name="_csrf" value=csrfToken type="hidden")
+
+  label(for="name") Name (required)
+  input(name="name" id="name" type="text" required)
+
+  label(for="description") Description
+  textarea(name="description" id="description")
+
+  label(for="price") Price (required)
+  input(name="price" id="price" type="number" required)
+
+  label(for="entreeType") Entree type (required)
+  select(name="entreeTypeId" id="entreeType" required)
+    each entreeType in entreeTypes
+      option(value=entreeType.id)= entreeType.name
+
+  button(type="submit") Create

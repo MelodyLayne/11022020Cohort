@@ -2,19 +2,21 @@
 // import UseEffect from './components/UseEffect';
 // import Cleanup from './components/Cleanup';
 // import CleanupUnmount from './components/CleanupUnmount';
-// import IssueForm from './components/IssueForm';
+import IssueForm from './components/IssueForm';
 // import PreviousState from './components/PreviousState';
 function App() {
   return (
     <>
-      <UseState />
+      {/* <UseState /> */}
       {/* <PreviousState /> */}
       {/* <UseEffect /> */}
       {/* <CleanupUnmount /> */}
       {/* <Cleanup /> */}
-      {/* <IssueForm /> */}
+      <IssueForm />
     </>
   );
 }
 
 export default App;
+
+/* Comment out the components you are not using so you can focus on that specific file. */

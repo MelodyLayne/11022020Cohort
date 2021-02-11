@@ -28,7 +28,7 @@ function ProductView() {
   }, [sideOpen]);
 
   return (
-    <div className='product-view'>
+    <div className='product-view'> 
       <div className='product-main-area'>
         <h1>Products</h1>
         <div className='product-list'>

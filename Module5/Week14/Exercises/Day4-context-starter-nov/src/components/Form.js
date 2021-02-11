@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { LanguageContext } from '../Context/LanguageContext';
 
 export default function Form() {
-  const { language, setLanguage, english, french }= useContext(LanguageContext);
+  const { language, setLanguage, english,  french }=  useContext(LanguageContext);
   const [nameOne, setNameOne] = useState('');
   const [nameTwo, setNameTwo] = useState('');
 

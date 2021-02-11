@@ -1,7 +1,11 @@
+import SeparatorTwo from './SeparatorTwo';
+
+import { LanguageContext } from '/Context/LanguageContext';
+
 const SeparatorOne = () => {
   return (
     <div>
-      <h1>SeparatorOne Component</h1>
+      <SeparatorTwo />
     </div>
   );
 };

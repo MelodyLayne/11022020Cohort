@@ -1,9 +1,11 @@
+import Form from './Form';
+
 const SeparatorTwo = () => {
-  return (
-    <div>
-      <h1>SeparatorTwo Component</h1>
-    </div>
-  );
+	return (
+		<div>
+			<Form />
+		</div>
+	);
 };
 
 export default SeparatorTwo;

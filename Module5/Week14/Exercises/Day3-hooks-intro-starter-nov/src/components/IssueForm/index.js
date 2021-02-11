@@ -4,16 +4,26 @@ import { format } from 'date-fns';
 
 const IssueForm = () => {
 
-  const [name, setName] =useState('')
-  const [email, setEmail] =useState('')
-  const [level, setLevel] =useState('')
-  const [issue, setIssue] =useState('')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [level, setLevel] = useState('')
+  const [issue, setIssue] = useState('')
   const [issuesArray, setIssuesArray] = useState('')
 
   const handleSubmit = (e) => {
     e.prevent.default();
-    
-  }
+    const newIssue = {
+      id: nanoid(),
+      date: formatRelative(new Date(), 'MM/dd/yyyy'),
+      name,
+      email,
+      level: level || 'not urgent',
+      issue
+    };
+
+    setIssuesArray((prev) => [newIssue, ...prev])
+  };
+
   console.log(name, email, level, issue)
   return (
 		<div>
@@ -35,7 +45,7 @@ const IssueForm = () => {
 				</div>
 				<div>
 					<label htmlFor="level">Urgency Level:</label>
-          <select onChange={(e) => setEmail(e.target.value)}
+          <select onChange={(e) => setlevel(e.target.value)}
             value={level}
             name="level">
 						<option value='' disabled>Select</option>

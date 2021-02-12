@@ -4,7 +4,6 @@ import App from './App';
 import { LanguageProvider } from './Context/LanguageContext';
 import './index.css';
 
-
 const Root = () => {
   return (
     <LanguageProvider>

@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 
 const Headers = ({ titles, currentTab, selectTab }) => {
   const handleClick = (e) => {
@@ -20,7 +20,7 @@ const Headers = ({ titles, currentTab, selectTab }) => {
       </li>
     );
   });
-  
+
   return (
     <ul className='tab-header'>
       {tabs}
@@ -28,21 +28,16 @@ const Headers = ({ titles, currentTab, selectTab }) => {
   );
 }
 
-class Folder extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      currentTab: 0
-    };
-  }
+//converting from a class component to a function component requires removing the 'class' variable and replacing it with function.
+// state variables are declared using the 'useState' variable as seen 3 lines below on like 35.
+//
 
-  selectTab = (num) => {
-    this.setState({ currentTab: num });
-  }
+function Folder({ folders }) {
+  const [currentTab, setCurrentTab] = useState(0)
 
-  render() {
-    const folder = this.props.folders[this.state.currentTab];
-    const titles = this.props.folders.map((folder) => folder.title);
+// changing the folder and titles variables was effected by removing the 'this.state' and 'this.props' arguments that are no longer necessary as the folders object is a destructured argument passed in the Folder function component.
+  const folder = folders[currentTab];
+  const titles = folders.map((folder) => folder.title);
 
     return (
       <section>
@@ -50,8 +45,8 @@ class Folder extends React.Component {
         <div className='tabs'>
           <Headers
             titles={titles}
-            currentTab={this.state.currentTab}
-            selectTab={this.selectTab}
+            currentTab={currentTab}
+            selectTab={setCurrentTab}
           />
           <div className='tab-content'>
             {folder.content}
@@ -60,6 +55,6 @@ class Folder extends React.Component {
       </section>
     );
   }
-}
+
 
 export default Folder;

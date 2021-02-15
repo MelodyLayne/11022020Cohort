@@ -1,13 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
-class AutoComplete extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputVal: '',
-    };
-  }
+function AutoComplete({ names }) {
+  const [inputVal, setInputVal] = useState('');
+
 
   handleInput = (e) => {
     this.setState({ inputVal: e.target.value });

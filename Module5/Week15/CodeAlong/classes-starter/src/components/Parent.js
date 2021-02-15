@@ -78,8 +78,11 @@ class Parent extends React.Component {
           Increment
     </button>
       <button onClick={() => this.setState((prevState => ({
-        count: prevState.count - 1
-      }))}>Decrement</button>
+        count: prevState.count - 1,
+      }))
+    }>
+          Decrement
+    </button>
       <input
         type="text"
         value={this.state.message}

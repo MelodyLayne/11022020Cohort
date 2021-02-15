@@ -71,13 +71,13 @@ class Parent extends React.Component {
       <h1>Hello from parent!</h1>
         <button
           onClick={() =>
-            this.setState((prevState => ({
-        count: prevState.count + 1,
+            this.setState(prevState => ({
+              count: prevState.count + 1
             }))
-    }>
+          }>
           Increment
     </button>
-      <button onClick={() => this.setState((prevState => ({
+      <button onClick={() => this.setState(prevState => ({
         count: prevState.count - 1,
       }))
     }>

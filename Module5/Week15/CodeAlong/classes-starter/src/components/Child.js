@@ -22,6 +22,7 @@ class Child extends Component {
         <h2>Count: {this.props.count}</h2>
         <h2>Message: {this.props.message}</h2>
       </>
+    );
   }
 }
 

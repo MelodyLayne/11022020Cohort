@@ -1,8 +1,2 @@
-const ArticleDetail = () => {
-  return (
-    <div>
-      <h1>ArticleDetail</h1>
-    </div>
-  );
-};
+const ArticleDetail = ({ title }) => <li>{title}</li>
 export default ArticleDetail;

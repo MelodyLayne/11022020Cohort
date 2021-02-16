@@ -1,12 +1,14 @@
 import { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Route, Switch, NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import SingleArticle from '../SingleArticle';
+import ArticleDetail from '../ArticleDetail'
 import { getArticles } from '../../reducers/articleReducer';
 
 
 const ArticleList = () => {
   const dispatch = useDispatch()
+  const article = useSelector((state) => state)
 
   useEffect(() => {
     dispatch(getArticles())
@@ -16,13 +18,14 @@ const ArticleList = () => {
     <div>
       <h1>ArticleList</h1>
       <ol>
-        <li>Gilligans Island. Is it true?</li>
-        <li>A Baseball Moment</li>
-        <li>Poke Moment</li>
-        <li>Cool Cats</li>
-        <li>Why Am I At Home</li>
+        {article &&
+          article.map(({ title, id }) => (
+            <NavLink key={id} to={`/article/${id}`}>
+              <ArticleDetail title={title} />
+            </NavLink>
+        ))}
       </ol>
-
+      
       <Switch>
         <Route path='/article/:id'>
           <SingleArticle />

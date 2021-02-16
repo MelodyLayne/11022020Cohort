@@ -1,7 +1,17 @@
+import { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import SingleArticle from '../SingleArticle';
+import { getArticles } from '../../reducers/articleReducer';
+
 
 const ArticleList = () => {
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getArticles())
+  }, [dispatch])
+
   return (
     <div>
       <h1>ArticleList</h1>

@@ -1,9 +1,10 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
-
+import articleReducer from '../reducers/articleReducer'
 //import articleReducer
 
 const rootReducer = combineReducers({
   //add reducer
+  article: articleReducer
 });
 
 let enhancer;

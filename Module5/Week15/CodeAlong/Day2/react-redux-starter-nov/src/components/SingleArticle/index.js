@@ -1,21 +1,18 @@
 // add parameter function
-
+import { useParams } from 'react-router-dom';
 import './SingleArticle.css';
 
-const SingleArticle = () => {
+const SingleArticle = ({ articles }) => {
   //get id from params
-
+  const { id } = useParams()
   //create selector to retrieve state
+  const singleArticle = articles.find((article) => article.id.toString() === id)
+
   return (
     <div className='singleArticle'>
-      <h1>Why Am I At Home</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex esse
-        laboriosam officia accusantium veritatis fugiat exercitationem vero
-        autem nihil aliquid ullam recusandae, quis odit odio voluptates
-        explicabo nobis! Consequuntur, aliquam?
-      </p>
+      <h1>{singleArticle.title}</h1>
+      <p>{singleArticle.body}</p>
     </div>
-  );
-};
+  )
+}
 export default SingleArticle;

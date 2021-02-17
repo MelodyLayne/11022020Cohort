@@ -2,6 +2,7 @@
 import { articles } from '../data/data';
 
 const GET_ARTICLES = 'article/setArticles'
+const ADD_ARTICLE = 'article/setArticle'
 
 export const getArticles = () => {
     return {
@@ -9,6 +10,14 @@ export const getArticles = () => {
         articles //payload is named specifically
     }
 }
+
+export const addArticle = (article) => {
+    return {
+        type: ADD_ARTICLE,
+        article
+    }
+}
+
 const initialState = { articles: [], isLoading: false }
 
 const articleReducer = (state = initialState, action) => {
@@ -16,6 +25,8 @@ const articleReducer = (state = initialState, action) => {
     switch(action.type){
         case GET_ARTICLES:
             return { ...state, articles: [...action.articles] }
+        case ADD_ARTICLE:
+            return { ...state, articles: [...state.articles, action.article] };
         default:
             return state
     }
